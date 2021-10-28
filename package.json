@@ -18,5 +18,19 @@
     "unit"
   ],
   "author": "Wellington S. Almeida (WellsSA)",
-  "license": "MIT"
+  "license": "MIT",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ddieguin/jsexpert-exercicio01-pokeapi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Ddieguin/jsexpert-exercicio01-pokeapi/issues"
+  },
+  "homepage": "https://github.com/Ddieguin/jsexpert-exercicio01-pokeapi#readme",
+  "dependencies": {
+    "axios": "^0.24.0"
+  }
 }

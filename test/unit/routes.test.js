@@ -37,7 +37,7 @@ describe("testing the routes object using spies", () => {
       .mockResolvedValue(mocks.threePokemons);
 
     params.req.method = "GET";
-    await routes["/team"](...params.values());
+    await routes[params.req.method]["/team"](...params.values());
     expect(params.res.end).toHaveBeenNthCalledWith(
       1,
       JSON.stringify([
@@ -57,7 +57,7 @@ describe("testing the routes object using spies", () => {
       .mockResolvedValue(mocks.OnePokemon);
 
     params.req.method = "GET";
-    await routes["/"](...params.values());
+    await routes[params.req.method]["/"](...params.values());
 
     expect(params.res.end).toHaveBeenNthCalledWith(
       1,

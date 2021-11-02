@@ -26,4 +26,9 @@ describe("End2End", () => {
         .expect(200)
     })
 
+    test('testing a non-existent method', async () => {
+        await request(server)
+        .post('/team')
+        .expect(404)
+    })
 })

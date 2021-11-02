@@ -7,9 +7,9 @@ const path = require("path");
 const eventEmitter = new EventEmitter();
 
 const handler = (req, res) => {
-  return routes[req.url]
-    ? routes[req.url](req, res)
-    : routes["default"](req, res);
+  return routes[req.method]
+    ? routes[req.method][routes[req.method][req.url] ? req.url : "default"](req, res)
+    : routes["undefined"](req, res);
 };
 
 (async () => {

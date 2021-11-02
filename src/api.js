@@ -1,4 +1,3 @@
-console.info("🚀 Your API Running right here!");
 const http = require("http");
 const axios = require("axios");
 const fs = require("fs/promises");
@@ -13,21 +12,40 @@ const handler = (req, res) => {
     : routes["default"](req, res);
 };
 
-async function getPokemons() {
+(async () => {
   const {
-    data: { results },
+    data: { results: pokemons },
   } = await axios.get(`https://pokeapi.co/api/v2/pokemon`);
+
+  const arrayOfPokemons = await fillPokemons(pokemons);
+  await readFile(arrayOfPokemons);
+  eventEmitter.emit("start");
+})();
+
+async function readFile(content) {
   await fs.writeFile(
     path.join(__dirname, "/database", "pokemons.json"),
-    JSON.stringify(results)
+    JSON.stringify(content)
   );
-  eventEmitter.emit("start");
 }
 
-eventEmitter.on("start", () => {
-  http.createServer(handler).listen(3000, () => {
-    console.log("http://localhost:3000");
-  });
-});
+async function fillPokemons(results) {
+  const pokemons = await Promise.all(
+    results.map(async (value) => {
+      const { data } = await axios.get(value.url);
+      const name = data.name;
+      const [
+        { move: { name: nameone } } = one,
+        { move: { name: nametwo } } = two,
+        { move: { name: namethree } } = three,
+      ] = data.moves;
 
-getPokemons();
+      return { name, moves: [nameone, nametwo, namethree] };
+    })
+  );
+  return pokemons;
+}
+
+const server = http.createServer(handler);
+
+module.exports = { server };

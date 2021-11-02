@@ -4,7 +4,8 @@
   "description": "An API that gives you a random pokemon starter team",
   "main": "src/api.js",
   "scripts": {
-    "start": "node src/api.js"
+    "start": "node server.js",
+    "test": "jest -i"
   },
   "keywords": [
     "Tests",
@@ -32,5 +33,10 @@
   "homepage": "https://github.com/Ddieguin/jsexpert-exercicio01-pokeapi#readme",
   "dependencies": {
     "axios": "^0.24.0"
+  },
+  "devDependencies": {
+    "jest": "^27.3.1",
+    "sinon": "^11.1.2",
+    "supertest": "^6.1.6"
   }
 }

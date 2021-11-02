@@ -18,11 +18,11 @@ Deve retornar um array com 3 pokemóns aleatórios, contendo seus respectivos `n
 
 ### Testes
 
-* [ ] mocks
-* [ ] stubs
-* [ ] spies
-* [ ] testes end-2-end
-* [ ] testes unitários
+* [x] mocks
+* [x] stubs
+* [x] spies
+* [x] testes end-2-end
+* [x] testes unitários
 * [ ] 100% de code coverage
 
 ### Extras

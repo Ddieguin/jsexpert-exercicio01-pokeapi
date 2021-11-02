@@ -60,7 +60,7 @@ describe("testing the routes object using spies", () => {
     await routes["/"](...params.values());
 
     expect(params.res.end).toHaveBeenNthCalledWith(
-      2,
+      1,
       JSON.stringify([
         { "name": "bulbasaur", "moves": ["razor-wind", "swords-dance", "cut"] }
       ])

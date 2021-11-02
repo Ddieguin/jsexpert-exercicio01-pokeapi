@@ -86,7 +86,6 @@ URLs Úteis ao desafio:
 
 Se você está pegando esse desafio na estréia, corre lá e envia pra gente até *Quarta-feira, 10 de novembro de 2021 (10/11/2021)*!
 
-
 ## Code Coverage
-    <p align="center"><img src="./100%codecoverage.png" /></p>
+<p align="center"><img src="https://github.com/Ddieguin/jsexpert-exercicio01-pokeapi/blob/master/100%25codecoverage.png" /></p>
 

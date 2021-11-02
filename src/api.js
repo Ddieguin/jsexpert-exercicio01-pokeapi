@@ -22,7 +22,7 @@ const handler = (req, res) => {
   eventEmitter.emit("start");
 })();
 
-async function readFile(content) {
+async function writePokemonsInFile(content) {
   await fs.writeFile(
     path.join(__dirname, "/database", "pokemons.json"),
     JSON.stringify(content)

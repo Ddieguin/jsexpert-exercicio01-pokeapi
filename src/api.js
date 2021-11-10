@@ -16,9 +16,8 @@ const handler = (req, res) => {
   const {
     data: { results: pokemons },
   } = await axios.get(`https://pokeapi.co/api/v2/pokemon`);
-
   const arrayOfPokemons = await fillPokemons(pokemons);
-  await readFile(arrayOfPokemons);
+  await writePokemonsInFile(arrayOfPokemons);
   eventEmitter.emit("start");
 })();
 

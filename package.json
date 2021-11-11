@@ -2,10 +2,12 @@
   "name": "desafio01-pokeapi",
   "version": "1.0.0",
   "description": "An API that gives you a random pokemon starter team",
-  "main": "src/api.js",
+  "main": "",
   "scripts": {
     "start": "node server.js",
-    "test": "jest -i"
+    "test": "jest -i",
+    "lib": "node index.js",
+    "dev": "npm run lib && npm run start"
   },
   "keywords": [
     "Tests",
